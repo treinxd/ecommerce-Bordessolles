@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="" class="logo">Electronic</a>
+            <ul class="nav-list">
+                <li class=""><a href="../index.html" class="px-2">Inicio</a></li>
+                <li class=""><a href="#productos" class="px-2">Productos</a></li>
+                <li class=""><a href="" class="px-2">Contacto</a></li>
+                <li class=""><a class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a href="" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a class="bi bi-moon-fill px-2 cursor-pointer" id="icono_modo"></a></li>
+            </ul>
+        </nav>
+            <div class="contenedorCuenta">
+                <form id="form" action="">
+                    <h1>Registrate</h1>
+                    <div class="controlInput">
+                        <label for="nombreDeUsuario">Nombre de usuario</label>
+                        <input id="nombreDeUsuario" name="nombreDeUsuario" type="text">
+                        <div class="error"></div>
+                    </div>
+                    <div class="controlInput">
+                        <label for="email">Email</label>
+                        <input id="email" name="nombreDeUsuario" type="text">
+                        <div class="error"></div>
+                    </div>
+                    <div class="controlInput">
+                        <label for="password">Contraseña</label>
+                        <input id="contrasenia" name="contrasenia" type="password">
+                        <div class="error"></div>
+                    </div>
+                    <div class="controlInput">
+                        <label for="password">Contraseña otra vez</label>
+                        <input id="contrasenia2" name="contrasenia2" type="password">
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        <footer>
+            <div class="footer-contenido">
+                <h3>Electronic</h3>
+                <p>Ponte en contacto con nosotros en nuestras redes sociales. </p>
+                <ul class="redes-sociales">
+                    <li><a><i class="bi bi-facebook"></i></a></li>
+                    <li><a><i class="bi bi-whatsapp"></i></a></li>
+                    <li><a><i class="bi bi-instagram"></i></a></li>
+                    <li><a><i class="bi bi-twitter"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+header {
+    font-size: 1.2rem;
+}
+
+nav {
+    background: black;
+    height: 80px;
+    width: 100%;
+}
+
+.nav-list li a {
+    color: #ffff;
+}
+
+.logo {
+    color: #ffff;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 80px;
+    padding: 0 100px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+}
+
+.nav-list li a {
+    color: #ffff;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-list li:hover a {
+    border-bottom: 2px solid #ffff;
+}
+
+#icono_modo {
+    cursor: pointer;
+}
+
+.barraDeBusqueda-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barraDeBusqueda {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 80%;
+}
+
+/* productos */
+
+.contenedor_productos{
+    display: flex;
+    padding: 50px;
+}
+
+#ruta{
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid;
+
+}
+
+.img-box{
+    width: 115px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left{
+    color: black;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 60px;
+}
+
+
+.img-box img{
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.left button{
+    width: 50%;
+    height: 40px;
+    color: white;
+    background: blue;
+    border-radius: 20px;
+    border: 0;
+}
+
+
+/* footer */
+
+footer {
+    width: 100%;
+    bottom: 0;
+    background-color: black;
+}
+
+.footer-contenido {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-contenido h3 {
+    font-size: 1.5rem;
+    margin-top: 40px;
+}
+
+.footer-contenido p {
+    margin: 20px auto;
+}
+
+.redes-sociales {
+    color: white;
+    font-size: 1.5rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.redes-sociales li {
+    margin: 0 10px;
+}
+
+.redes-sociales a {
+    text-decoration: none;
+}
+
+.footer-bajo {
+    color: white;
+    background-color: black;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-bajo p {
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+
+/* swiper */
+
+.section-body {
+    background: #ffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffff;
+}
+
+.swiper-pagination-bullet {
+    background: #ffff;
+}
+
+.swiper-pagination-bullet-active {
+    background: #ffff;
+}
+
+
+/*usuario*/
+
+
+#form {
+    width: 300px;
+    margin: 80px auto;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#form h1{
+    text-align: center;
+}
+
+#form button{
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 20px;
+}
+
+.controlInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.controlInput input{
+    border: 2px solid;
+    border-radius: 20px;
+    display: block;
+    padding: 10px;
+    width: 100%;
+}
+
+.controlInput input:focus {
+    outline: 0;
+}
+
+.controlInput.exito input {
+    border-color: rgb(1, 189, 35);
+}
+
+.controlInput.error input {
+    border-color: rgb(189, 1, 1);
+}
+
+.controlInput .error {
+    color:rgb(189, 1, 1);
+    font-size: 9px;
+    text-align: center;
+    height: 10px;
+
+}
+
+
