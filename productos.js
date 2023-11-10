@@ -38,25 +38,29 @@ const producto = [
     
 ] 
 
-const categorias = [...new Set(producto.map((item)=>
-    {return item}))]
-let carrito = document.getElementById('ruta')
-carrito.innerHTML = categorias.map((item)=>
-{
-    var {imagen, titulo, precio} = item;
-    return(
+let i = 0;
+let carrito = document.getElementById('ruta');
+carrito.innerHTML = producto.map((item) => {
+    var { imagen, titulo, precio } = item;
+    return (
         `<div class="box">
             <div class="img-box">
-                <img src="${imagen}"></img>
+                <img src="${imagen}" alt="">
             </div>
             <div class="left">
                 <p>${titulo}</p>
                 <h2>${precio}</h2>
-                <button>Agregar al carrito</button>
+                <button onclick='agregarAlCarrito(${i++})'>Agregar al carrito</button>
             </div>
         </div>`
     );
-}).join('')
+}).join('');
+
+function agregarAlCarrito(index) {
+    console.log(`Producto agregado al carrito ${index}`);
+}
+
+let listaDeProductosCarrito = []
 
 document.addEventListener('DOMContentLoaded', function () {
     const swiperImages = document.querySelectorAll('.swiper-slide img');
@@ -64,7 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
     swiperImages.forEach((image) => {
         image.addEventListener('click', () => {
             const productId = image.parentElement.dataset.id;
+
             window.location.href = `#productos`;
+            setTimeout(() => {
+                const productoElement = document.getElementById(`producto-${productId}`);
+                if (productoElement) {
+                    productoElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 500);
         });
     });
 });

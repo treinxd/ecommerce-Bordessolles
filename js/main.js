@@ -1,16 +1,3 @@
-/* carrito */
-
-let contenedorCompletoCarrito = document.querySelector('.contenedor_productos');
-
-loadEventlisteners();
-
-function loadEventlisteners(){
-    contenedorCompletoCarrito.addEventListener('click', agregarproducto);
-}
-
-function agregarproducto(e){
-    console.log(e.target);
-}
 
 
 /* swiper */
