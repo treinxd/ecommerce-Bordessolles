@@ -24,7 +24,7 @@ function mostrarCarrito() {
                     </div>
                     <p>${titulo}</p>
                     <h2>$ ${precio}.00</h2>
-                    <i onclick='delElement(${index})'>Delete</i>
+                    <button onclick='delElement(${index})'>Delete</button>
                 </div>`
             );
         }).join('');
