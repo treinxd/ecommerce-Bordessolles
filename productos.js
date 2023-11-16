@@ -36,11 +36,18 @@ const producto = [
         precio: '$40',
     },
     
-] 
+]
 
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let categorias = [...new Set(producto.map((item) => item.titulo))];
 let i = 0;
-let carrito = document.getElementById('ruta');
-carrito.innerHTML = producto.map((item) => {
+
+function guardarCarritoEnLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+let productosLista = document.getElementById('ruta');
+productosLista.innerHTML = producto.map((item) => {
     var { imagen, titulo, precio } = item;
     return (
         `<div class="box">
@@ -56,11 +63,22 @@ carrito.innerHTML = producto.map((item) => {
     );
 }).join('');
 
-function agregarAlCarrito(index) {
-    console.log(`Producto agregado al carrito ${index}`);
+
+function agregarAlCarrito(a){
+    carrito.push({...producto[a]});
+    guardarCarritoEnLocalStorage();
+
 }
 
-let listaDeProductosCarrito = []
+function delElement(a){
+    carrito.splice(a, 1);
+    guardarCarritoEnLocalStorage();
+
+}
+
+function guardarCarritoEnLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     const swiperImages = document.querySelectorAll('.swiper-slide img');

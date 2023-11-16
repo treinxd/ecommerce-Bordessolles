@@ -15,7 +15,7 @@
             <ul class="nav-list">
                 <li class=""><a href="../index.html" class="px-2">Inicio</a></li>
                 <li class=""><a href="#productos" class="px-2">Productos</a></li>
-                <li class=""><a href="./usuarioLogin.html" class="px-2">Contacto</a></li>
+                <li class=""><a href="./usuario.html" class="px-2">Contacto</a></li>
                 <li class=""><a class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
                 <li class=""><a href="" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
                 <li class=""><a class="bi bi-moon-fill px-2 cursor-pointer" id="icono_modo"></a></li>
@@ -24,12 +24,7 @@
         <section>
             <div class="contenedorCuenta">
                 <form id="form" action="">
-                    <h1>Registrate</h1>
-                    <div class="controlInput">
-                        <label for="nombreDeUsuario">Nombre de usuario</label>
-                        <input id="nombreDeUsuario" name="nombreDeUsuario" type="text">
-                        <div class="error"></div>
-                    </div>
+                    <h1>Inicia sesión</h1>
                     <div class="controlInput">
                         <label for="email">Email</label>
                         <input id="email" name="nombreDeUsuario" type="text">
@@ -40,13 +35,13 @@
                         <input id="contrasenia" name="contrasenia" type="password">
                         <div class="error"></div>
                     </div>
-                    <div class="controlInput">
-                        <label for="password">Contraseña otra vez</label>
-                        <input id="contrasenia2" name="contrasenia2" type="password">
-                        <div class="error"></div>
+                    <div class="recordar-olvidar">
+                        <label><input type="checkbox">
+                        Recordarme</label>
                     </div>
-                    <a href="./usuarioLogin.html">Iniciar sesion</a>
-                    <button type="submit" value="register">Registrarse</button>
+                    <a href="">Te olvidaste la contraseña?</a>
+                    <a href="./usuario.html">Registrarse</a>
+                    <button type="submit" class="login">Iniciar sesión</button>
                 </form>
             </div>
         </section>
@@ -63,8 +58,7 @@
             </div>
         </footer>
     </header>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script defer src="../js/register.js"></script>
+    <script defer src="../js/login.js"></script>
 </body>
 </html>
