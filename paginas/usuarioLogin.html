@@ -6,6 +6,7 @@
     <title>usuario</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -14,16 +15,16 @@
             <a href="" class="logo">Electronic</a>
             <ul class="nav-list">
                 <li class=""><a href="../index.html" class="px-2">Inicio</a></li>
-                <li class=""><a href="#productos" class="px-2">Productos</a></li>
-                <li class=""><a href="./usuario.html" class="px-2">Contacto</a></li>
-                <li class=""><a class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
-                <li class=""><a href="" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
-                <li class=""><a class="bi bi-moon-fill px-2 cursor-pointer" id="icono_modo"></a></li>
+                <li class=""><a href="../index.html" class="px-2">Productos</a></li>
+                <li class=""><a href="./contacto.html" class="px-2">Contacto</a></li>
+                <li class=""><a href= "./carrito.html" class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a href="./usuario.html" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a class="bi bi-sun-fill px-2 cursor-pointer" id="icono_modo"></a></li>
             </ul>
         </nav>
         <section>
             <div class="contenedorCuenta">
-                <form id="form" action="">
+                <form id="form" class="form_color" action="">
                     <h1>Inicia sesión</h1>
                     <div class="controlInput">
                         <label for="email">Email</label>
@@ -59,6 +60,8 @@
         </footer>
     </header>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/main.js"></script>
     <script defer src="../js/login.js"></script>
 </body>
 </html>

@@ -1,99 +1,63 @@
-const producto = [
-    {
-        id: 1,
-        imagen: 'imagenes/rtx4090.png',
-        titulo: 'Rtx 4090',
-        precio: '$5000',
-    },
-    {
-        id: 2,
-        imagen: 'imagenes/monitor_led.png',
-        titulo: 'Monitor Gamer Samsung F24t35',
-        precio: '$40',
-    },
-    {
-        id: 3,
-        imagen: 'imagenes/2ddr5.jpg',
-        titulo: '2x8GB Memorias ram ddr5',
-        precio: '$8',
-    },
-    {
-        id: 4,
-        imagen: 'imagenes/fuente650w.jpg',
-        titulo: 'Fuente corsair 650w',
-        precio: '$10',
-    },
-    {
-        id: 5,
-        imagen: 'imagenes/motherboard.jpg',
-        titulo: 'Motherboard MSI pro H610M-G',
-        precio: '$8',
-    },
-    {
-        id: 6,
-        imagen: 'imagenes/cpu.jpg',
-        titulo: 'Procesador AMD Ryzen 5 5600X',
-        precio: '$40',
-    },
-    
-]
-
+const productos = 'json/productos.json'; 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-let categorias = [...new Set(producto.map((item) => item.titulo))];
-let i = 0;
+let producto;
 
 function guardarCarritoEnLocalStorage() {
     localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
-let productosLista = document.getElementById('ruta');
-productosLista.innerHTML = producto.map((item) => {
-    var { imagen, titulo, precio } = item;
-    return (
-        `<div class="box">
-            <div class="img-box">
-                <img src="${imagen}" alt="">
-            </div>
-            <div class="left">
-                <p>${titulo}</p>
-                <h2>${precio}</h2>
-                <button onclick='agregarAlCarrito(${i++})'>Agregar al carrito</button>
-            </div>
-        </div>`
-    );
-}).join('');
+let letraProductos;
 
+function construirInterfaz() {
+    const productosLista = document.getElementById('ruta');
+    productosLista.innerHTML = producto.map((item, index) => {
+        const { imagen, titulo, precio } = item;
+        return `
+            <div class="box" id="producto-${index}">
+                <div class="img-box">
+                    <img src="${imagen}" alt="">
+                </div>
+                <div class="left">
+                    <p>${titulo}</p>
+                    <h2>${precio}</h2>
+                    <button class="agregar-al-carrito" data-index="${index}">Agregar al carrito</button>
+                </div>
+            </div>`;
+    }).join();
 
-function agregarAlCarrito(a){
-    carrito.push({...producto[a]});
-    guardarCarritoEnLocalStorage();
+    letraProductos = document.querySelectorAll(".left p, .left h2");
 
-}
+    productosLista.addEventListener('click', (event) => {
+        if (event.target.classList.contains('agregar-al-carrito')) {
+            const index = event.target.dataset.index;
+            agregarAlCarrito(index);
+            showToast("Producto agregado al carrito");
+        }
+    });
 
-function delElement(a){
-    carrito.splice(a, 1);
-    guardarCarritoEnLocalStorage();
-
-}
-
-function guardarCarritoEnLocalStorage() {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-}
-
-document.addEventListener('DOMContentLoaded', function () {
     const swiperImages = document.querySelectorAll('.swiper-slide img');
-
-    swiperImages.forEach((image) => {
+    swiperImages.forEach((image, index) => {
         image.addEventListener('click', () => {
-            const productId = image.parentElement.dataset.id;
-
             window.location.href = `#productos`;
             setTimeout(() => {
-                const productoElement = document.getElementById(`producto-${productId}`);
+                const productoElement = document.getElementById(`producto-${index}`);
                 if (productoElement) {
                     productoElement.scrollIntoView({ behavior: 'smooth' });
                 }
             }, 500);
         });
     });
-});
+}
+
+fetch(productos)
+    .then(response => response.json())
+    .then(data => {
+        producto = data;
+        construirInterfaz();
+    })
+    .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
+function agregarAlCarrito(index) {
+    carrito.push({ ...producto[index] });
+    guardarCarritoEnLocalStorage();
+}

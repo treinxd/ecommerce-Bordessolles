@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>usuario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="" class="logo">Electronic</a>
+            <ul class="nav-list">
+                <li class=""><a href="../index.html" class="px-2">Inicio</a></li>
+                <li class=""><a href="../index.html" class="px-2">Productos</a></li>
+                <li class=""><a href="./contacto.html" class="px-2">Contacto</a></li>
+                <li class=""><a href="carrito.html" class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a href="./usuario.html" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a class="bi bi-sun-fill px-2 cursor-pointer" id="icono_modo"></a></li>
+            </ul>
+        </nav>
+        <section>
+            <div class="contenedorCuenta">
+                <form id="form" class="form_color" action="">
+                    <h1>Contactate con nosotros</h1>
+                    <div class="controlInput">
+                        <label for="nombreApellido">Nombre y apellido</label>
+                        <input id="nombreApellido" name="nombreApellido" type="text">
+                        <div class="error"></div>
+                    </div>
+                    <div class="controlInput">
+                        <label for="email">Tu email</label>
+                        <input id="email" name="nombreDeUsuario" type="text">
+                        <div class="error"></div>
+                    </div>
+                    <div class="controlInput">
+                        <label for="mensaje">Mensaje</label>
+                        <input id="mensaje" name="mensaje" type="text">
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit" class="login">Enviar</button>
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-contenido">
+                <h3>Electronic</h3>
+                <p>Ponte en contacto con nosotros en nuestras redes sociales. </p>
+                <ul class="redes-sociales">
+                    <li><a><i class="bi bi-facebook"></i></a></li>
+                    <li><a><i class="bi bi-whatsapp"></i></a></li>
+                    <li><a><i class="bi bi-instagram"></i></a></li>
+                    <li><a><i class="bi bi-twitter"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/main.js"></script>
+    <script defer src="../js/contacto.js"></script>
+</body>
+</html>

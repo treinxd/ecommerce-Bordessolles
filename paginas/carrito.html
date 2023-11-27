@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronic</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 <body>
 
@@ -17,10 +17,10 @@
             <a href="" class="logo">Electronic</a>
             <ul class="nav-list">
                 <li class=""><a href="../index.html" class="px-2">Inicio</a></li>
-                <li class=""><a href="#productos" class="px-2">Productos</a></li>
-                <li class=""><a href="l" class="px-2">Contacto</a></li>
-                <li class=""><a href="./paginas/carrito.html" class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
-                <li class=""><a href="./paginas/usuarioLogin.html" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a href="../index.html" class="px-2">Productos</a></li>
+                <li class=""><a href="./contacto.html" class="px-2">Contacto</a></li>
+                <li class=""><a href="./carrito.html" class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
+                <li class=""><a href="./usuarioLogin.html" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
                 <li class=""><a class="bi bi-sun-fill px-2 cursor-pointer" id="icono_modo"></a></li>
             </ul>
         </nav>
@@ -32,7 +32,8 @@
             <div id="itemCarrito">Tu carrito está vacío.</div>
             <div class="footerCarrito">
                 <h3>Total</h3>
-                <h2 id="total">$ 0.00</h2>
+                <h2 id="total">$ 0</h2>
+                <button class ="button" id="comprar" onclick="vaciarCarrito()">Comprar</button>
             </div>
         </div>
     </div>
@@ -49,7 +50,9 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="../carrito.js"></script>
+    <script src="../js/toasty.js"></script>
     <script defer src="../js/main.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@
     <title>Electronic</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">    
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
@@ -18,7 +19,7 @@
             <ul class="nav-list">
                 <li class=""><a href="./index.html" class="px-2">Inicio</a></li>
                 <li class=""><a href="#productos" class="px-2">Productos</a></li>
-                <li class=""><a href="l" class="px-2">Contacto</a></li>
+                <li class=""><a href="./paginas/contacto.html" class="px-2">Contacto</a></li>
                 <li class=""><a href="./paginas/carrito.html" class="bi bi-cart-fill px-2 cursor-pointer"></a></li>
                 <li class=""><a href="./paginas/usuarioLogin.html" class="bi bi-person-fill px-2 cursor-pointer"></a></li>
                 <li class=""><a class="bi bi-sun-fill px-2 cursor-pointer" id="icono_modo"></a></li>
@@ -39,9 +40,6 @@
           </div>
     </section>
     <section id="productos">
-        <div class="barraDeBusqueda-container">
-            <input type="search" placeholder="Busca un producto" class="barraDeBusqueda">
-        </div>
         <div class="contenedor_productos">
             <div id="ruta">
             </div>
@@ -61,6 +59,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./productos.js"></script>
     <script defer src="./js/main.js"></script>
 </body>

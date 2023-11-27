@@ -70,26 +70,37 @@ const validateInputs = () => {
 }
 
 
-const registroForum = document.querySelector('#form')
-registroForum.addEventListener('submit', (e)=>{
-    e.preventDefault()
+const registroForum = document.querySelector('#form');
+registroForum.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    const nombre = document.querySelector('#nombreDeUsuario').value
-    const email = document.querySelector('#email').value
-    const contrasenia = document.querySelector ('#contrasenia').value
+    const nombre = document.querySelector('#nombreDeUsuario').value;
+    const email = document.querySelector('#email').value;
+    const contrasenia = document.querySelector('#contrasenia').value;
 
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
-    const elUsuarioRegistrado = usuarios.find(usuario => usuario.email === email)
-    if(elUsuarioRegistrado){
-        return alert('el usuario ya esta registrado.')
+    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    const elUsuarioRegistrado = usuarios.find((usuario) => usuario.email === email);
+
+    if (elUsuarioRegistrado) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El usuario ya está registrado',
+        });
+    } else {
+        usuarios.push({ nombre: nombre, email: email, contrasenia: contrasenia });
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Registro completado!',
+            showConfirmButton: false,
+            timer: 1500,
+        });
+
+        setTimeout(() => {
+            window.location.href = 'usuarioLogin.html';
+        }, 1000);
     }
-
-    usuarios.push({nombre: nombre, email: email, contrasenia: contrasenia})
-    localStorage.setItem('usuarios', JSON.stringify(usuarios))
-    alert('Registro completado!')
-    setTimeout(() => {
-        window.location.href = 'usuarioLogin.html'
-    }, 1000);
-})
-
+});
 
